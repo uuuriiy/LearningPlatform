@@ -11,7 +11,7 @@ export const BenefitsSection = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Join thousands of educators who trust our platform to deliver exceptional learning experiences. 
-            Here's what makes us different.
+            Here&apos;s what makes us different.
           </p>
         </div>
 
