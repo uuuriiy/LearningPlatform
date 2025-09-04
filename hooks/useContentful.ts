@@ -1,5 +1,6 @@
 import { useQuery, UseQueryOptions } from '@tanstack/react-query';
-import { contentfulApi } from '@/lib/contentful';
+import { apiClient } from '@/lib/api-client';
+import { contentfulApi } from '@/lib/contentful'; // Still needed for lessons and quizzes
 import { queryKeys } from '@/lib/react-query';
 import type { Course, Lesson, Quiz, ContentfulFilter } from '@/lib/contentful';
 
@@ -10,7 +11,7 @@ export function useCourses(
 ) {
   return useQuery({
     queryKey: queryKeys.coursesList(options),
-    queryFn: () => contentfulApi.getCourses(options),
+    queryFn: () => apiClient.getCourses(options),
     staleTime: 5 * 60 * 1000, // 5 minutes
     ...queryOptions,
   });
@@ -22,7 +23,7 @@ export function useCourseBySlug(
 ) {
   return useQuery({
     queryKey: queryKeys.courseBySlug(slug),
-    queryFn: () => contentfulApi.getCourseBySlug(slug),
+    queryFn: () => apiClient.getCourseBySlug(slug),
     enabled: Boolean(slug),
     ...queryOptions,
   });
@@ -33,7 +34,7 @@ export function useCourseDifficulties(
 ) {
   return useQuery({
     queryKey: queryKeys.courseDifficulties,
-    queryFn: () => contentfulApi.getDifficulties(),
+    queryFn: () => apiClient.getDifficulties(),
     staleTime: 10 * 60 * 1000, // 10 minutes
     ...queryOptions,
   });
@@ -46,7 +47,7 @@ export function useCoursesByDifficulty(
 ) {
   return useQuery({
     queryKey: queryKeys.coursesByDifficulty(difficulty, options),
-    queryFn: () => contentfulApi.getCoursesByDifficulty(difficulty, options),
+    queryFn: () => apiClient.getCoursesByDifficulty(difficulty, options),
     enabled: Boolean(difficulty),
     ...queryOptions,
   });
@@ -59,7 +60,7 @@ export function useSearchCourses(
 ) {
   return useQuery({
     queryKey: queryKeys.searchCourses(query, options),
-    queryFn: () => contentfulApi.searchCourses(query, options),
+    queryFn: () => apiClient.searchCourses(query, options),
     enabled: Boolean(query?.trim()),
     ...queryOptions,
   });

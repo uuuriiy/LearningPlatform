@@ -160,6 +160,8 @@ export interface ContentfulFilter {
   skip?: number;
   where?: Record<string, unknown>;
   order?: string[];
+  difficulty?: string;
+  search?: string;
 }
 
 export interface PaginationInfo {
