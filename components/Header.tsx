@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const Header = () => {
   return (
     <header className="bg-white shadow-sm">
@@ -5,22 +7,22 @@ export const Header = () => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center">
-              <div className="flex items-center space-x-2">
+              <Link href="/" className="flex items-center space-x-2">
                 <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
                   <span className="text-white font-bold text-lg">L</span>
                 </div>
                 <span className="text-xl font-semibold text-gray-900">Learnify</span>
-              </div>
+              </Link>
             </div>
 
             {/* Navigation Menu */}
             <nav className="hidden md:flex space-x-8">
-              <a href="#" className="text-gray-900 font-medium hover:text-blue-600 transition-colors">
+              <Link href="/" className="text-gray-900 font-medium hover:text-blue-600 transition-colors">
                 Home
-              </a>
-              <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+              </Link>
+              <Link href="/courses" className="text-gray-600 hover:text-blue-600 transition-colors">
                 Courses
-              </a>
+              </Link>
               <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
                 About
               </a>
