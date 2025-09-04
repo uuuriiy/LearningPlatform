@@ -3,10 +3,11 @@ import { contentfulApi } from '@/lib/contentful';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
-    const course = await contentfulApi.getCourseBySlug(params.slug);
+    const { slug } = await params;
+    const course = await contentfulApi.getCourseBySlug(slug);
     
     if (!course) {
       return NextResponse.json(
