@@ -1,5 +1,4 @@
 import { useCourseBySlug } from '@/hooks/useContentful';
-import { CourseCardSkeleton } from './CourseCardSkeleton';
 import Image from 'next/image';
 
 interface CourseDetailProps {
@@ -52,7 +51,7 @@ export function CourseDetail({ slug }: CourseDetailProps) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-8 text-center">
         <h2 className="text-2xl font-bold text-gray-900">Course Not Found</h2>
-        <p className="text-gray-600 mt-2">The course you're looking for doesn't exist.</p>
+        <p className="text-gray-600 mt-2">The course you&apos;re looking for doesn&apos;t exist.</p>
       </div>
     );
   }

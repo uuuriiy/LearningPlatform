@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 interface CourseFiltersProps {
   categories: string[];
@@ -149,7 +149,7 @@ export function CourseFilters({
             )}
             {searchQuery.trim() !== '' && (
               <span className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-purple-100 text-purple-800">
-                "{searchQuery}"
+                &quot;{searchQuery}&quot;
                 <button
                   onClick={() => onSearchChange('')}
                   className="ml-2 hover:text-purple-600"

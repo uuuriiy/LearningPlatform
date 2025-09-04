@@ -15,8 +15,6 @@ import type {
   Lesson,
   Quiz,
   CoursesResponse,
-  CourseResponse,
-  LessonResponse,
   LessonsResponse,
   QuizResponse,
   ContentfulFilter,
