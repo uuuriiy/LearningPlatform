@@ -48,8 +48,8 @@ class ApiClient {
   async getCourseBySlug(slug: string): Promise<Course | null> {
     try {
       return await this.request<Course>(`/courses/${slug}`);
-    } catch (error: any) {
-      if (error.message.includes('404')) {
+    } catch (error) {
+      if (error instanceof Error && error.message.includes('404')) {
         return null;
       }
       throw error;
